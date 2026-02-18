@@ -5,18 +5,27 @@
 
 <h1 class="text-center">หน้าแรกของเว็บไซต์</h1>
 
-@foreach (var Student in Model)
-{
-    <p>รหัสนักเรียน : @Student.Id</p>
-    <p>ชื่อนักเรียน : @Student.Name</p>
-    <p>คะแนน : @Student.Score</p>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>รหัสนักเรียน</th>
+            <th>ชื่อนักเรียน</th>
+            <th>คะแนนสอบ</th>
+            <th>แก้ไข</th>
+            <th>ลบ</th>
+        </tr>
 
-    @if (@Student.Score >= 50)
-    {
-        <strong class="text-success">สอบผ่าน</strong>
-    } else
-    {
-        <strong class="text-danger">สอบไม่ผ่าน</strong>
-    }
-    <hr />
-}
+    </thead>
+    <tbody>
+        @foreach (var Student in Model)
+        {
+            <tr >
+                <td>@Student.Id</td>
+                <td>@Student.Name</td>
+                <td>@Student.Score</td>
+                <td><a class="btn btn-warning">แก้ไข</a></td>
+                <td><a class="btn btn-danger">ลบ</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

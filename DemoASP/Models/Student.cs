@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace DemoASP.Models
 {
@@ -7,8 +8,12 @@ namespace DemoASP.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "กรุณาป้อนชื่อนักเรียน")]
+        [DisplayName("ซื่อนักเรียน")]
         public string Name { get; set; }
+
+        [DisplayName("คะแนนสอบ")]
+        [Range(0, 100, ErrorMessage = "กรุณาป้อนคะแนนสอบในช่วง 0 - 100")]
         public int Score { get; set; }
     }
 }

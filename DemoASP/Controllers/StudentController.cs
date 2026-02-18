@@ -1,31 +1,21 @@
-﻿using DemoASP.Models;
+﻿using DemoASP.Data;
+using DemoASP.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoASP.Controllers
 {
     public class StudentController : Controller
     {
+        private readonly ApplicationDBContext _dbContext;
+
+        public StudentController(ApplicationDBContext db)
+        {
+            _dbContext = db;
+        }
         public IActionResult Index()
         {
-            Student Student1 = new Student();
-            Student1.Id = 1;
-            Student1.Name = "Weerapon";
-            Student1.Score = 100;
+           IEnumerable <Student> allStudents = _dbContext.Students;
 
-            var Student2 = new Student();
-            Student2.Id = 2;
-            Student2.Name = "SomChai";
-            Student2.Score = 50;
-
-            Student Student3 = new Student();
-            Student3.Id = 3;
-            Student3.Name = "SomMai";
-            Student3.Score = 42;
-
-            List<Student> allStudents =  new List<Student>();
-            allStudents.Add(Student1);
-            allStudents.Add(Student2);
-            allStudents.Add(Student3);
 
             return View(allStudents);
         }
@@ -33,6 +23,19 @@ namespace DemoASP.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Student obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _dbContext.Students.Add(obj);
+                _dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
         }
     }
 }
