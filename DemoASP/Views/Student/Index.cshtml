@@ -3,29 +3,44 @@
     ViewData["Title"] = "หน้าแรก";
 }
 
-<h1 class="text-center">หน้าแรกของเว็บไซต์</h1>
+@if (Model.Count() > 0) {
+    <h1 class="text-center">หน้าแรกของเว็บไซต์</h1>
 
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th>รหัสนักเรียน</th>
-            <th>ชื่อนักเรียน</th>
-            <th>คะแนนสอบ</th>
-            <th>แก้ไข</th>
-            <th>ลบ</th>
-        </tr>
-
-    </thead>
-    <tbody>
-        @foreach (var Student in Model)
-        {
-            <tr >
-                <td>@Student.Id</td>
-                <td>@Student.Name</td>
-                <td>@Student.Score</td>
-                <td><a class="btn btn-warning">แก้ไข</a></td>
-                <td><a class="btn btn-danger">ลบ</a></td>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>รหัสนักเรียน</th>
+                <th>ชื่อนักเรียน</th>
+                <th>คะแนนสอบ</th>
+                <th>แก้ไข</th>
+                <th>ลบ</th>
             </tr>
-        }
-    </tbody>
-</table>
+
+        </thead>
+        <tbody>
+            @foreach (var Student in Model)
+            {
+                <tr>
+                    <td>@Student.Id</td>
+                    <td>@Student.Name</td>
+                    <td>@Student.Score</td>
+                    <td>
+                        <a class="btn btn-warning"
+                           asp-controller="Student"
+                           asp-action="Edit"
+                           asp-route-id="@Student.Id">แก้ไข</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger"
+                           asp-controller="Student"
+                           asp-action="Delete"
+                           asp-route-id="@Student.Id"
+                           onclick="return confirm('คุณต้องการลบ @Student.Name หรือไม่ ?')">ลบ</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+} else {
+    <div class="alert alert-secondary">ไม่มีข้อมูลนักเรียนในระบบ</div>
+}

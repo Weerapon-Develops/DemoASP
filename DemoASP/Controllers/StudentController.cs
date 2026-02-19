@@ -37,5 +37,67 @@ namespace DemoASP.Controllers
             }
             return View(obj);
         }
+
+        public IActionResult Edit(int? Id)
+        {
+            if (Id==null || Id==0)
+            {
+                return NotFound();
+            }
+           var obj = _dbContext.Students.Find(Id);
+            if (obj != null)
+            {
+                return View(obj);
+            } else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Student obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _dbContext.Students.Update(obj);
+                _dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+
+        public IActionResult Delete(int? Id)
+        {
+            if (Id == null || Id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _dbContext.Students.Find(Id);
+            if (obj != null)
+            {
+                _dbContext.Students.Remove(obj);
+                _dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult Delete(Student obj)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _dbContext.Students.Update(obj);
+        //        _dbContext.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(obj);
+        //}
     }
 }
