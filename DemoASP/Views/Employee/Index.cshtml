@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DemoASP.Models.Employee>
+@{
+    ViewData["Title"] = "พนักงาน";
+}
+
+@if (Model.Count() > 0)
+{
+    <h1 class="text-center">ข้อมูลพนักงาน</h1>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>รหัสพนักงาน</th>
+                <th>ชื่อพนักงาน</th>
+                <th>นามสกุลพนักงาน</th>
+                <th>อีเมล์</th>
+                <th>เบอร์โทร</th>
+                <th>เงินเดือน</th>
+                <th>วันเริ่มงาน</th>
+                <th>สถานะพนักงาน</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var Employee in Model)
+            {
+                <tr>
+                    <td>@Employee.EmployeeId</td>
+                    <td>@Employee.FirstName</td>
+                    <td>@Employee.LastName</td>
+                    <td>@Employee.Email</td>
+                    <td>@Employee.PhoneNumber</td>
+                    <td>@Employee.Salary</td>
+                    <td>@Employee.HireDate</td>
+                    <td>@Employee.IsActive</td>
+                    <td>
+                        <a class="btn btn-warning"
+                           asp-controller="Employee"
+                           asp-action="Edit"
+                           asp-route-id="@Employee.EmployeeId">แก้ไข</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger"
+                           asp-controller="Employee"
+                           asp-action="Delete"
+                           asp-route-id="@Employee.EmployeeId"
+                           onclick="return confirm('คุณต้องการลบ @Employee.FirstName @Employee.LastName  หรือไม่ ?')">ลบ</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-secondary">ไม่มีข้อมูลนักเรียนในระบบ</div>
+}

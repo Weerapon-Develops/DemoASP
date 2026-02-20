@@ -1,0 +1,61 @@
+﻿@model Employee;
+@{
+    ViewData["Title"] = "บันทึกข้อมูลพนักงาน";
+}
+
+<h1 class="text-center mb-4">บันทึกข้อมูลพนักงาน</h1>
+
+<form method="post" asp-controller="Employee" asp-action="Create">
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label asp-for="PhoneNumber"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label asp-for="Salary"></label>
+            <input type="number" asp-for="Salary" class="form-control" />
+            <span asp-validation-for="Salary" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label asp-for="HireDate"></label>
+            <input type="date" asp-for="HireDate" class="form-control" />
+            <span asp-validation-for="HireDate" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label asp-for="IsActive"></label>
+            <select asp-for="IsActive" class="form-control">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+            </select>
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="text-end">
+        <button type="submit" class="btn btn-primary mt-3">บันทึก</button>
+    </div>
+</form>

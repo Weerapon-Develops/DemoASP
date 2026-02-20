@@ -4,20 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DemoASP.Controllers
 {
-    public class StudentController : Controller
+    public class EmployeeController : Controller
     {
+
         private readonly ApplicationDBContext _dbContext;
 
-        public StudentController(ApplicationDBContext db)
+        public EmployeeController(ApplicationDBContext db)
         {
             _dbContext = db;
         }
         public IActionResult Index()
         {
-           IEnumerable <Student> allStudents = _dbContext.Students;
-
-
-            return View(allStudents);
+            IEnumerable<Employee> allEmployee = _dbContext.Employees;
+            return View(allEmployee);
         }
 
         public IActionResult Create()
@@ -27,11 +26,11 @@ namespace DemoASP.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Student obj)
+        public IActionResult Create(Employee obj)
         {
             if (ModelState.IsValid)
             {
-                _dbContext.Students.Add(obj);
+                _dbContext.Employees.Add(obj);
                 _dbContext.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -40,15 +39,16 @@ namespace DemoASP.Controllers
 
         public IActionResult Edit(int? Id)
         {
-            if (Id==null || Id==0)
+            if (Id == null || Id == 0)
             {
                 return NotFound();
             }
-           var obj = _dbContext.Students.Find(Id);
+            var obj = _dbContext.Employees.Find(Id);
             if (obj != null)
             {
                 return View(obj);
-            } else
+            }
+            else
             {
                 return NotFound();
             }
@@ -56,11 +56,11 @@ namespace DemoASP.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Student obj)
+        public IActionResult Edit(Employee obj)
         {
             if (ModelState.IsValid)
             {
-                _dbContext.Students.Update(obj);
+                _dbContext.Employees.Update(obj);
                 _dbContext.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -73,10 +73,10 @@ namespace DemoASP.Controllers
             {
                 return NotFound();
             }
-            var obj = _dbContext.Students.Find(Id);
+            var obj = _dbContext.Employees.Find(Id);
             if (obj != null)
             {
-                _dbContext.Students.Remove(obj);
+                _dbContext.Employees.Remove(obj);
                 _dbContext.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -86,7 +86,5 @@ namespace DemoASP.Controllers
             }
 
         }
-
-    
     }
 }
