@@ -67,23 +67,47 @@ namespace DemoASP.Controllers
             return View(obj);
         }
 
-        public IActionResult Delete(int? Id)
+        //public IActionResult Delete(int? Id)
+        //{
+        //    if (Id == null || Id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var obj = _dbContext.Employees.Find(Id);
+        //    if (obj != null)
+        //    {
+        //        _dbContext.Employees.Remove(obj);
+        //        _dbContext.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        return NotFound();
+        //    }
+
+        //}
+
+        [HttpPost]
+        public IActionResult Delete(int id)
         {
-            if (Id == null || Id == 0)
+            var obj = _dbContext.Employees.Find(id);
+
+            if (obj == null)
             {
                 return NotFound();
             }
-            var obj = _dbContext.Employees.Find(Id);
-            if (obj != null)
-            {
-                _dbContext.Employees.Remove(obj);
-                _dbContext.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return NotFound();
-            }
+
+            _dbContext.Employees.Remove(obj);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
+        public JsonResult GetEmployeeById(int id)
+        {
+            var emp = _dbContext.Employees.Find(id);
+            return Json(emp);
 
         }
     }
