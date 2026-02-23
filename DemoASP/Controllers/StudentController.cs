@@ -14,7 +14,11 @@ namespace DemoASP.Controllers
         }
         public IActionResult Index()
         {
-           IEnumerable <Student> allStudents = _dbContext.Students;
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            IEnumerable <Student> allStudents = _dbContext.Students;
 
 
             return View(allStudents);
