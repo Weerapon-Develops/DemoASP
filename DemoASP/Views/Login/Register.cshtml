@@ -1,19 +1,39 @@
 ﻿@{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "สมัครสมาชิก";
 }
 
-<h2>สมัครสมาชิก</h2>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow" style="width: 500px;">
+        <div class="card-header text-center bg-dark text-white">
+            <h3>สมัครสมาชิก</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Register" method="post">
 
-<form method="post">
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" name="username" class="form-control" required />
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" required />
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">
+                        Register
+                    </button>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a asp-controller="Login" asp-action="Index"
+                       style="color: blue; text-decoration: underline;">
+                        กลับไปหน้า Login
+                    </a>
+                </div>
+
+            </form>
+        </div>
     </div>
-
-    <div class="form-group mt-2">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control" required />
-    </div>
-
-    <button type="submit" class="btn btn-success mt-3">Register</button>
-</form>
+</div>

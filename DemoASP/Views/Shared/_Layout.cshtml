@@ -65,9 +65,9 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-danger fw-bold"
-                                   asp-controller="Login"
-                                   asp-action="Logout">
+                                <a href="#" class="nav-link text-danger"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#logoutModal">
                                     Logout
                                 </a>
                             </li>
@@ -83,6 +83,35 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+
+    <!-- Modal ยืนยันการออกจากระบบ -->
+    <div class="modal fade" id="logoutModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title">ยืนยันการออกจากระบบ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p class="fs-5">คุณต้องการออกจากระบบใช่หรือไม่ ?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <form asp-controller="Login" asp-action="Logout" method="post">
+                        <button type="submit" class="btn btn-danger">
+                            ยืนยันการออกจากระบบ
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            ยกเลิก
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">

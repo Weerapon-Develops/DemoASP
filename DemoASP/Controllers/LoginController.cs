@@ -66,10 +66,17 @@ namespace DemoASP.Controllers
             return View();
         }
 
+        //public IActionResult Logout()
+        //{
+        //    HttpContext.Session.Clear();
+        //    return RedirectToAction("Index");
+        //}
+
+        [HttpPost]
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Index");
+            HttpContext.Session.Clear(); // ถ้าใช้ Session
+            return RedirectToAction("Index", "Login");
         }
     }
 

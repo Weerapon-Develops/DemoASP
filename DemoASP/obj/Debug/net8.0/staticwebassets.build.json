@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "H2XNUpcDxc6t6YyH5qqNilPYXfcOubBXYfHqh/gHwxE=",
+  "Hash": "0UVeFyCFQEff0rIXnjLV4GFRCX4ls6ONBp2Ptd0rHSA=",
   "Source": "DemoASP",
   "BasePath": "_content/DemoASP",
   "Mode": "Default",
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\images\\security-bg.jpeg",
+      "SourceId": "DemoASP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\",
+      "BasePath": "_content/DemoASP",
+      "RelativePath": "images/security-bg#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g7l0yyfwgp",
+      "Integrity": "XIU/+PQUdhYk8HhCJm23PSI43yjmPKfDrFE9bptih9A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\security-bg.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\images\\security-bg.jpg",
+      "SourceId": "DemoASP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\",
+      "BasePath": "_content/DemoASP",
+      "RelativePath": "images/security-bg#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u813pgnz1f",
+      "Integrity": "8q04h8OXNVj2n9mZxOL4sIESDCO4G6CJuwJB8FIccjU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\security-bg.jpg"
     },
     {
       "Identity": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\js\\site.js",
@@ -1645,6 +1687,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/security-bg.g7l0yyfwgp.jpeg",
+      "AssetFile": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\images\\security-bg.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XIU/+PQUdhYk8HhCJm23PSI43yjmPKfDrFE9bptih9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Feb 2026 15:40:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g7l0yyfwgp"
+        },
+        {
+          "Name": "label",
+          "Value": "images/security-bg.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XIU/+PQUdhYk8HhCJm23PSI43yjmPKfDrFE9bptih9A="
+        }
+      ]
+    },
+    {
+      "Route": "images/security-bg.jpeg",
+      "AssetFile": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\images\\security-bg.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XIU/+PQUdhYk8HhCJm23PSI43yjmPKfDrFE9bptih9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Feb 2026 15:40:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XIU/+PQUdhYk8HhCJm23PSI43yjmPKfDrFE9bptih9A="
+        }
+      ]
+    },
+    {
+      "Route": "images/security-bg.jpg",
+      "AssetFile": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\images\\security-bg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8q04h8OXNVj2n9mZxOL4sIESDCO4G6CJuwJB8FIccjU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Feb 2026 15:39:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8q04h8OXNVj2n9mZxOL4sIESDCO4G6CJuwJB8FIccjU="
+        }
+      ]
+    },
+    {
+      "Route": "images/security-bg.u813pgnz1f.jpg",
+      "AssetFile": "C:\\Users\\sweer\\source\\repos\\DemoASP\\DemoASP\\wwwroot\\images\\security-bg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8q04h8OXNVj2n9mZxOL4sIESDCO4G6CJuwJB8FIccjU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Feb 2026 15:39:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u813pgnz1f"
+        },
+        {
+          "Name": "label",
+          "Value": "images/security-bg.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8q04h8OXNVj2n9mZxOL4sIESDCO4G6CJuwJB8FIccjU="
         }
       ]
     },
